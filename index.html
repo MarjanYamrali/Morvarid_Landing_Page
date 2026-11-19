@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MORVARID — a modern luxury boutique for women's fashion, bags, shoes, jewelry, and beauty. Beauty in Every Detail.">
+  <title>MORVARID | Beauty in Every Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23D8C9AD'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <div class="page-overlay" id="pageOverlay" hidden></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="logo" href="#home" data-i18n-aria="aria.home" aria-label="MORVARID home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">MORVARID</span>
+      </a>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="en" id="langEnBtn">EN</button>
+          <button type="button" class="lang-btn" data-lang="fa" id="langFaBtn">FA</button>
+        </div>
+
+        <button type="button" class="icon-btn" id="themeToggle" aria-pressed="false" data-i18n-aria="aria.theme">
+          <span class="icon-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.2 6.2 4.8 4.8M19.2 19.2l-1.4-1.4M6.2 17.8 4.8 19.2M19.2 4.8l-1.4 1.4"/></svg>
+          </span>
+          <span class="icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5z"/></svg>
+          </span>
+        </button>
+
+        <button type="button" class="icon-btn cart-btn" id="cartToggle" data-i18n-aria="aria.cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8h12l-1 11H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button type="button" class="icon-btn menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" data-i18n-aria="aria.menu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav" id="mainNav" aria-label="Primary">
+    <ul class="nav-list">
+      <li><a href="#home" data-i18n="nav.home">Home</a></li>
+      <li><a href="#categories" data-i18n="nav.categories">Categories</a></li>
+      <li><a href="#products" data-i18n="nav.products">Products</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-labelledby="cartTitle">
+    <div class="cart-drawer-header">
+      <h2 id="cartTitle" data-i18n="cart.title">Your Selection</h2>
+      <button type="button" class="icon-btn" id="cartClose" data-i18n-aria="aria.closeCart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="cart.total">Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button type="button" class="btn btn-primary btn-full" id="checkoutBtn" data-i18n="cart.checkout">Review Selection</button>
+      <p class="form-note" data-i18n="cart.demo">This cart is a frontend demonstration. No real checkout is processed.</p>
+    </div>
+  </aside>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-media">
+        <img src="images/hero.jpg" alt="Editorial fashion portrait for the MORVARID luxury collection" width="1920" height="1080">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow light" data-i18n="hero.eyebrow">Luxury Fashion &amp; Beauty</p>
+        <h1 data-i18n="hero.title">Beauty in Every Detail.</h1>
+        <p class="hero-lead" data-i18n="hero.lead">A modern boutique for women who collect quiet luxury: refined fashion, sculptural bags, jewelry, and beauty crafted with intention.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#products" data-i18n="hero.explore">Explore Collection</a>
+          <a class="btn btn-ghost" href="#about" data-i18n="hero.discover">Discover More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section categories" id="categories">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow" data-i18n="categories.eyebrow">The Boutique</p>
+          <h2 data-i18n="categories.title">Shop by Category</h2>
+          <p class="section-intro" data-i18n="categories.intro">Five curated worlds, one signature aesthetic. Choose a category and enter the collection.</p>
+        </header>
+        <div class="category-grid">
+          <article class="category-card category-card-large">
+            <img src="images/category-fashion.jpg" alt="Model wearing a tailored mustard fashion look" width="900" height="1200">
+            <div class="category-card-body">
+              <h3 data-i18n="cat.fashion">Fashion</h3>
+              <button type="button" class="text-link" data-filter="fashion" data-i18n="categories.shop">View pieces</button>
+            </div>
+          </article>
+          <article class="category-card">
+            <img src="images/category-bags.jpg" alt="Structured blush leather handbag on a marble surface" width="900" height="900">
+            <div class="category-card-body">
+              <h3 data-i18n="cat.bags">Bags</h3>
+              <button type="button" class="text-link" data-filter="bags" data-i18n="categories.shop">View pieces</button>
+            </div>
+          </article>
+          <article class="category-card">
+            <img src="images/category-shoes.jpg" alt="Pair of nude satin heels" width="900" height="900">
+            <div class="category-card-body">
+              <h3 data-i18n="cat.shoes">Shoes</h3>
+              <button type="button" class="text-link" data-filter="shoes" data-i18n="categories.shop">View pieces</button>
+            </div>
+          </article>
+          <article class="category-card">
+            <img src="images/category-jewelry.jpg" alt="Gold jewelry arranged on a linen surface" width="900" height="900">
+            <div class="category-card-body">
+              <h3 data-i18n="cat.jewelry">Jewelry</h3>
+              <button type="button" class="text-link" data-filter="jewelry" data-i18n="categories.shop">View pieces</button>
+            </div>
+          </article>
+          <article class="category-card">
+            <img src="images/category-beauty.jpg" alt="Luxury makeup brushes and cosmetics" width="900" height="900">
+            <div class="category-card-body">
+              <h3 data-i18n="cat.beauty">Beauty</h3>
+              <button type="button" class="text-link" data-filter="beauty" data-i18n="categories.shop">View pieces</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow" data-i18n="products.eyebrow">Featured</p>
+          <h2 data-i18n="products.title">The Collection</h2>
+          <p class="section-intro" data-i18n="products.intro">A considered edit of signature pieces. Filter by category or open a quick view to see more detail.</p>
+        </header>
+        <div class="filter-bar" id="filterBar" role="tablist" aria-label="Product categories">
+          <button type="button" class="filter-btn is-active" data-filter="all" data-i18n="filter.all">All</button>
+          <button type="button" class="filter-btn" data-filter="fashion" data-i18n="cat.fashion">Fashion</button>
+          <button type="button" class="filter-btn" data-filter="bags" data-i18n="cat.bags">Bags</button>
+          <button type="button" class="filter-btn" data-filter="shoes" data-i18n="cat.shoes">Shoes</button>
+          <button type="button" class="filter-btn" data-filter="jewelry" data-i18n="cat.jewelry">Jewelry</button>
+          <button type="button" class="filter-btn" data-filter="beauty" data-i18n="cat.beauty">Beauty</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-state" id="productEmpty" hidden data-i18n="products.empty">No pieces found in this category.</p>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-media">
+          <img src="images/about.jpg" alt="Fashion editorial portrait representing the MORVARID brand philosophy" width="1400" height="1600">
+          <div class="about-frame" aria-hidden="true"></div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow" data-i18n="about.eyebrow">Our Story</p>
+          <h2 data-i18n="about.title">About MORVARID</h2>
+          <p data-i18n="about.p1">MORVARID was imagined as a modern pearl: luminous, restrained, and composed of countless quiet details. We design an online boutique for women who want luxury without noise.</p>
+          <p data-i18n="about.p2">Every garment, bag, jewel, and beauty ritual is chosen for material honesty, silhouette, and the way it feels in daily life. The experience is slow, considered, and personal.</p>
+          <p data-i18n="about.p3">From the first glance at a fabric to the last clasp of a necklace, our philosophy is simple: beauty lives in the details you return to.</p>
+          <dl class="about-stats">
+            <div>
+              <dt data-i18n="about.stat1">Ateliers</dt>
+              <dd>12</dd>
+            </div>
+            <div>
+              <dt data-i18n="about.stat2">Signature Pieces</dt>
+              <dd>180+</dd>
+            </div>
+            <div>
+              <dt data-i18n="about.stat3">Private Clients</dt>
+              <dd>4K</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benefits" id="benefits">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow" data-i18n="benefits.eyebrow">The Experience</p>
+          <h2 data-i18n="benefits.title">Why Choose Us</h2>
+        </header>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.2 4.6L19 8.2l-3.4 3.3.8 4.9L12 14.8 7.6 16.4l.8-4.9L5 8.2l4.8-.6L12 3z"/></svg>
+            </div>
+            <h3 data-i18n="benefits.qualityTitle">Premium Quality</h3>
+            <p data-i18n="benefits.qualityText">Silks, leathers, and gold-tone finishes are selected for longevity, not trends that fade after a season.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 5V4h8v1M8 12h8"/></svg>
+            </div>
+            <h3 data-i18n="benefits.designTitle">Elegant Designs</h3>
+            <p data-i18n="benefits.designText">Soft architecture, feminine lines, and a palette of pearl, sage, and sand create a coherent wardrobe.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            </div>
+            <h3 data-i18n="benefits.secureTitle">Secure Shopping</h3>
+            <p data-i18n="benefits.secureText">This demonstration highlights a calm, protected checkout experience. No real payments are taken here.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+            </div>
+            <h3 data-i18n="benefits.supportTitle">Customer Support</h3>
+            <p data-i18n="benefits.supportText">Styling notes, size guidance, and thoughtful replies — support that feels like a private atelier visit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow" data-i18n="testimonials.eyebrow">Client Voices</p>
+          <h2 data-i18n="testimonials.title">Testimonials</h2>
+          <p class="section-intro demo-note" data-i18n="testimonials.note">Sample / demo testimonials created for this frontend assignment. They do not represent real customers.</p>
+        </header>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial-card">
+            <p data-i18n="testimonials.t1">“The silk dress arrived as if it had been made for a gallery opening. Quiet, precise, and completely unforgettable.”</p>
+            <footer>
+              <cite data-i18n="testimonials.n1">Elena Voss</cite>
+              <span data-i18n="testimonials.r1">Sample review · Fashion</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p data-i18n="testimonials.t2">“I keep returning for the jewelry. The pearl necklace is the piece I wear when I want to feel composed.”</p>
+            <footer>
+              <cite data-i18n="testimonials.n2">Sara Nouri</cite>
+              <span data-i18n="testimonials.r2">Sample review · Jewelry</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p data-i18n="testimonials.t3">“From the beauty ritual to the leather tote, everything feels considered. MORVARID understands modern luxury.”</p>
+            <footer>
+              <cite data-i18n="testimonials.n3">Amelia Hart</cite>
+              <span data-i18n="testimonials.r3">Sample review · Beauty</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section newsletter" id="newsletter">
+      <div class="container newsletter-panel">
+        <div class="newsletter-copy">
+          <p class="eyebrow" data-i18n="newsletter.eyebrow">Private List</p>
+          <h2 data-i18n="newsletter.title">Subscribe to the Atelier Notes</h2>
+          <p data-i18n="newsletter.intro">Seasonal edits, early access, and styling letters. This subscription is a frontend demonstration only.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <div class="field">
+            <label class="sr-only" for="newsletterEmail" data-i18n="newsletter.label">Email address</label>
+            <input type="email" id="newsletterEmail" name="email" autocomplete="email" data-i18n-placeholder="newsletter.placeholder" placeholder="Your email address">
+            <p class="field-error" id="newsletterError" role="alert"></p>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="newsletter.submit">Subscribe</button>
+          <p class="form-success" id="newsletterSuccess" role="status" hidden></p>
+          <p class="form-note" data-i18n="newsletter.demo">No emails are stored or sent. Validation runs entirely in the browser.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Atelier Desk</p>
+          <h2 data-i18n="contact.title">Contact</h2>
+          <p data-i18n="contact.intro">Write to the boutique with styling questions or press inquiries. This form is a demonstration and does not send real messages.</p>
+          <ul class="contact-details">
+            <li>
+              <span data-i18n="contact.addressLabel">Address</span>
+              <strong data-i18n="contact.address">12 Pearl Atelier Lane, District 3, Sample City</strong>
+            </li>
+            <li>
+              <span data-i18n="contact.phoneLabel">Phone</span>
+              <strong data-i18n="contact.phone">+1 (000) 555-0148</strong>
+            </li>
+            <li>
+              <span data-i18n="contact.emailLabel">Email</span>
+              <strong>atelier@morvarid.demo</strong>
+            </li>
+            <li>
+              <span data-i18n="contact.hoursLabel">Hours</span>
+              <strong data-i18n="contact.hours">Sat–Thu, 10:00–19:00</strong>
+            </li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="contactName" data-i18n="contact.name">Full Name</label>
+            <input type="text" id="contactName" name="name" autocomplete="name">
+            <p class="field-error" id="contactNameError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="contactEmail" data-i18n="contact.email">Email Address</label>
+            <input type="email" id="contactEmail" name="email" autocomplete="email">
+            <p class="field-error" id="contactEmailError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="contactSubject" data-i18n="contact.subject">Subject</label>
+            <input type="text" id="contactSubject" name="subject">
+            <p class="field-error" id="contactSubjectError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="contactMessage" data-i18n="contact.message">Message</label>
+            <textarea id="contactMessage" name="message" rows="5"></textarea>
+            <p class="field-error" id="contactMessageError" role="alert"></p>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Send Message</button>
+          <p class="form-success" id="contactSuccess" role="status" hidden></p>
+          <p class="form-note" data-i18n="contact.demo">Messages stay in your browser. Nothing is emailed or saved on a server.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-text">MORVARID</span>
+        </a>
+        <p data-i18n="footer.blurb">A modern luxury boutique for fashion, bags, shoes, jewelry, and beauty. Beauty in every detail.</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer.nav">Navigation</h3>
+        <ul>
+          <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#categories" data-i18n="nav.categories">Categories</a></li>
+          <li><a href="#products" data-i18n="nav.products">Products</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.categories">Categories</h3>
+        <ul>
+          <li><a href="#products" data-filter="fashion" data-i18n="cat.fashion">Fashion</a></li>
+          <li><a href="#products" data-filter="bags" data-i18n="cat.bags">Bags</a></li>
+          <li><a href="#products" data-filter="shoes" data-i18n="cat.shoes">Shoes</a></li>
+          <li><a href="#products" data-filter="jewelry" data-i18n="cat.jewelry">Jewelry</a></li>
+          <li><a href="#products" data-filter="beauty" data-i18n="cat.beauty">Beauty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.connect">Connect</h3>
+        <ul class="footer-contact">
+          <li data-i18n="contact.address">12 Pearl Atelier Lane, District 3, Sample City</li>
+          <li data-i18n="contact.phone">+1 (000) 555-0148</li>
+          <li>atelier@morvarid.demo</li>
+        </ul>
+        <div class="socials">
+          <a href="#contact" data-i18n-aria="social.instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#contact" data-i18n-aria="social.pinterest" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M10.5 18c.4-1.6.7-3.2 1-4.8.2 0 .6.8 1.6.8 2.2 0 3.4-1.8 3.4-4.1 0-2.6-2-4.4-5-4.4-3.4 0-5.4 2.2-5.4 5.1 0 1.2.6 2.7 1.8 3.1.2.1.3 0 .3-.2l.3-1.1c0-.2 0-.3-.1-.4-.4-.5-.6-1.1-.6-1.7 0-1.7 1.3-3.3 3.5-3.3 1.9 0 3 1.2 3 2.9 0 2-.8 3.4-1.9 3.4-.6 0-1.1-.5-1-.1l.4 1.8.3 1.6"/></svg>
+          </a>
+          <a href="#contact" data-i18n-aria="social.facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MORVARID. <span data-i18n="footer.rights">All rights reserved. Fictional brand for a frontend assignment.</span></p>
+    </div>
+  </footer>
+
+  <div class="modal" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-panel">
+      <button type="button" class="icon-btn modal-close" id="modalClose" data-i18n-aria="aria.closeModal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="modal-media">
+        <img id="modalImage" src="images/product-silk-dress.jpg" alt="">
+      </div>
+      <div class="modal-copy">
+        <p class="eyebrow" id="modalCategory"></p>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p id="modalDescription"></p>
+        <button type="button" class="btn btn-primary" id="modalAddToCart" data-i18n="products.add">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toastRegion" aria-live="polite" aria-relevant="additions"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
